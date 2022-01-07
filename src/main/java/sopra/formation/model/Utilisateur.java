@@ -1,17 +1,43 @@
 package sopra.formation.model;
 
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "User type")
 public class Utilisateur {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
 	private int version;
+	@Column(name = "lastname", length = 100)
 	private String nom;
+	@Column(name = "firstname", length = 100)
 	private String prenom;
+	@Column(name = "email", length = 100)
 	private String email;
+	@Column(name = "fphonenumber", length = 100)
 	private String telephone;
+	@Column(name = "right", length = 100)
+	@Enumerated(EnumType.STRING)
 	private Droit droit;
+	@Column(name = "identifiant", length = 100)
 	private String identifiant;
+	@Column(name = "password", length = 100)
 	private String motDePasse;
+	@Transient
 	private Filiere filiere;
 	@Embedded
 	private Adresse adresse;

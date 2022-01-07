@@ -1,5 +1,7 @@
 package sopra.formation.model;
 
+
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +15,9 @@ import javax.persistence.Version;
 
 @Entity
 @Table(name="Curriculum")
+
+
+
 public class Cursus {
 
 	@Id

@@ -1,13 +1,26 @@
 package sopra.formation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+
+@Entity
+@Table(name = "Former")
+@DiscriminatorValue("Former")
 public class Formateur extends Utilisateur{
 	
-	public List<Absence> absences;
-	public List<Competence> competences;
-	public List<Cours> ListeCours;
-	public List<Filiere> filieres;
+	@Transient
+	public List<Absence> absences = new ArrayList<>();
+	@Transient
+	public List<Competence> competences = new ArrayList<>();
+	@Transient
+	public List<Cours> ListeCours = new ArrayList<>();
+	@Transient
+	public List<Filiere> filieres = new ArrayList<>();
 	
 	
 	public Formateur() {
