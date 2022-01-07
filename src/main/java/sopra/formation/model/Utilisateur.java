@@ -30,7 +30,7 @@ public class Utilisateur {
 	private String email;
 	@Column(name = "fphonenumber", length = 100)
 	private String telephone;
-	@Column(name = "right", length = 100)
+	@Column(name = "access", length = 100)
 	@Enumerated(EnumType.STRING)
 	private Droit droit;
 	@Column(name = "identifiant", length = 100)
