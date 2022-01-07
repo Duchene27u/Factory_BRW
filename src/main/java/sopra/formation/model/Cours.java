@@ -4,8 +4,9 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -21,11 +22,14 @@ public class Cours {
 	private int duree;
 	@Column (name = "sort")
 	private int ordre;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="trainer_id")
 	private Formateur formateur;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="workshop_id")
 	private Filiere filiere;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="subject_id")
 	private Matiere matiere;
 	
 	public Cours() {

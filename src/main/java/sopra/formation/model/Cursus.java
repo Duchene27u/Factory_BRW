@@ -1,23 +1,16 @@
 package sopra.formation.model;
 
-
-
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
 @Table(name="Curriculum")
-
-
-
 public class Cursus {
 
 	@Id
@@ -33,9 +26,11 @@ public class Cursus {
 	private int noteT;
 	@Column(name="commentT")
 	private String commentairesT;
-	@Transient
-	private List<Stagiaire> stagiaires = new ArrayList<Stagiaire>();
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="trainee_id")
+	private Stagiaire stagiaires;
+	@ManyToOne
+	@JoinColumn(name="workshop_id")
 	private Filiere filiere;
 	
 	public Cursus() {
@@ -78,10 +73,10 @@ public class Cursus {
 	public void setCommentairesT(String commentairesT) {
 		this.commentairesT = commentairesT;
 	}
-	public List<Stagiaire> getStagiaires() {
+	public Stagiaire getStagiaires() {
 		return stagiaires;
 	}
-	public void setStagiaires(List<Stagiaire> stagiaires) {
+	public void setStagiaires(Stagiaire stagiaires) {
 		this.stagiaires = stagiaires;
 	}
 	public Filiere getFiliere() {

@@ -4,12 +4,15 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import javax.persistence.Version;
 
 @Entity
@@ -21,19 +24,24 @@ public class Filiere {
 	private int id;
 	@Version
 	private int version;
+	@Column(name="startDate")
 	private LocalDate dateDebut;
+	@Column(name="duration")
 	private int duree;
 	@Enumerated
 	private Dispositif dispositif;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="user_id")
 	private Utilisateur gestionnaire;
-	@Transient
+	@OneToMany(mappedBy = "filiere")
 	private List<Cours> cours=new ArrayList<Cours>();
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="room_id")
 	private Salle salle;
-	@Transient
+	@ManyToOne
+	@JoinColumn(name="trainer_id")
 	private Formateur formateurRef;
-	@Transient
+	@OneToMany(mappedBy = "filiere")
 	private List<Cursus> cursus = new ArrayList<Cursus>();
 	
 	public Filiere() {
@@ -88,11 +96,11 @@ public class Filiere {
 		this.gestionnaire = gestionnaire;
 	}
 
-	public List<Cours> getListeCours() {
+	public List<Cours> getCours() {
 		return cours;
 	}
 
-	public void setListeCours(List<Cours> listeCours) {
+	public void setCours(List<Cours> listeCours) {
 		this.cours = listeCours;
 	}
 
@@ -112,11 +120,11 @@ public class Filiere {
 		this.formateurRef = formateurRef;
 	}
 
-	public List<Cursus> getListeCursus() {
+	public List<Cursus> getCursus() {
 		return cursus;
 	}
 
-	public void setListeCursus(List<Cursus> listeCursus) {
+	public void setCursus(List<Cursus> listeCursus) {
 		this.cursus = listeCursus;
 	}
 	

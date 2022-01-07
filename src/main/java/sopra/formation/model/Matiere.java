@@ -7,6 +7,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
@@ -30,9 +31,9 @@ public class Matiere {
 	private String prerequis;
 	@Column (name = "program")
 	private String programme;
-	@Transient
+	@OneToMany(mappedBy = "matiere")
 	private List<Cours> cours = new ArrayList<>();
-	@Transient
+	@OneToMany(mappedBy = "matiere")
 	private List<Competence> competences = new ArrayList<>();
 	
 		
