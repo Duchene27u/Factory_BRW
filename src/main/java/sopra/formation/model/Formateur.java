@@ -5,22 +5,22 @@ import java.util.List;
 
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
-@Table(name = "Former")
-@DiscriminatorValue("Former")
+@Table(name = "Trainer")
+@DiscriminatorValue("Trainer")
 public class Formateur extends Utilisateur{
 	
-	@Transient
-	public List<Absence> absences = new ArrayList<>();
-	@Transient
-	public List<Competence> competences = new ArrayList<>();
-	@Transient
-	public List<Cours> ListeCours = new ArrayList<>();
-	@Transient
-	public List<Filiere> filieres = new ArrayList<>();
+	@OneToMany(mappedBy = "formateur")
+	private List<Absence> absences = new ArrayList<>();
+	@OneToMany(mappedBy = "formateur")
+	private List<Competence> competences = new ArrayList<>();
+	@OneToMany(mappedBy = "formateur")
+	private List<Cours> ListeCours = new ArrayList<>();
+	@OneToMany(mappedBy = "formateurRef")
+	private List<Filiere> filieres = new ArrayList<>();
 	
 	
 	public Formateur() {

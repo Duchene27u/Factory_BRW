@@ -1,27 +1,30 @@
 package sopra.formation.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 
 @Entity
 @Table(name = "Intern")
 @DiscriminatorValue("Intern")
 public class Stagiaire extends Utilisateur{
 
-	public LocalDate dateNaissance;
-	@Transient
-	public Cursus cursus;
+	@Column(name = "DateOfBirth", length = 100)
+	private LocalDate dateNaissance;
+	@OneToMany(mappedBy = "stagiaires")
+	private List<Cursus> cursus;
 	
 	public Stagiaire() {
 		super();
 	}
 	
-	
+
+
 
 	public Stagiaire(String nom, String prenom, String identifiant, String motDePasse, LocalDate dateNaissance) {
 		super(nom, prenom, identifiant, motDePasse);
@@ -38,11 +41,13 @@ public class Stagiaire extends Utilisateur{
 		this.dateNaissance = dateNaissance;
 	}
 
-	public Cursus getCursus() {
+	public List<Cursus> getCursus() {
 		return cursus;
 	}
 
-	public void setCursus(Cursus cursus) {
+
+
+	public void setCursus(List<Cursus> cursus) {
 		this.cursus = cursus;
 	}
 	
