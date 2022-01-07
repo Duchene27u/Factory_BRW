@@ -1,10 +1,15 @@
 package sopra.formation.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.processing.Generated;
+import javax.persistence.Column;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.persistence.Version;
@@ -18,11 +23,14 @@ public class Salle {
 	private int id;
 	@Version
 	private int version;
+	@Column(name="name")
 	private String nom;
 	private String url;
 	@Embedded
 	private Adresse adresse;
 	private int capacite;
+	@OneToMany(mappedBy = "salle")
+	private List<Filiere> filieres = new ArrayList<Filiere>();
 
 	public Salle() {
 
