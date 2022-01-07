@@ -7,10 +7,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.ICompetence;
+import sopra.formation.dao.ICompetenceDao;
 import sopra.formation.model.Competence;
 
-public class CompetenceDaoJpa implements ICompetence {
+public class CompetenceDaoJpa implements ICompetenceDao {
 
 	@Override
 	public List<Competence> findAll() {

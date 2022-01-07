@@ -7,11 +7,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.ICours;
+import sopra.formation.dao.ICoursDao;
 import sopra.formation.model.Cours;
 
 
-public class CoursDaoJpa implements ICours{
+public class CoursDaoJpa implements ICoursDao{
 
 	@Override
 	public List<Cours> findAll() {

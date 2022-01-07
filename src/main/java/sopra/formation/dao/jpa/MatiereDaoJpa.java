@@ -7,11 +7,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 
 import sopra.formation.Application;
-import sopra.formation.dao.IMatiere;
+import sopra.formation.dao.IMatiereDao;
 import sopra.formation.model.Matiere;
 
 
-public class MatiereDaoJpa implements IMatiere{
+public class MatiereDaoJpa implements IMatiereDao{
 
 	@Override
 	public List<Matiere> findAll() {
