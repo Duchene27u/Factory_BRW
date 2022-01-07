@@ -1,15 +1,9 @@
 package sopra.formation.test;
 
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 
 import sopra.formation.Application;
-import sopra.formation.dao.IAchatDao;
-import sopra.formation.dao.ICommandeDao;
-import sopra.formation.dao.IPersonneDao;
-import sopra.formation.dao.IProduitDao;
+import sopra.formation.dao.IUtilisateurDao;
 import sopra.formation.model.Adresse;
-import sopra.formation.model.Fournisseur;
 import sopra.formation.model.Utilisateur;
 
 public class TestJpa {

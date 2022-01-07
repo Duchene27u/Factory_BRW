@@ -152,3 +152,4 @@ public class AbsenceDaoJpa implements IAbsenceDao{
 		}
 
 }
+}
