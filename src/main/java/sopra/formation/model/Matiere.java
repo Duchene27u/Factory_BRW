@@ -5,24 +5,37 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
 
+@Entity
+@Table(name = "Subject")
 public class Matiere {
-
-	private Long id;
-	private int version;
-	private String titre;
-	private int duree;
-	private String objectif;
-	private String prerequis;
-	private String programme;
 	
+	@Id
+	@GeneratedValue
+	private Long id;
+	@Version
+	private int version;
+	@Column(name = "title")
+	private String titre;
+	@Column (name = "duration")
+	private int duree;
+	@Column (name = "goal")
+	private String objectif;
+	@Column (name = "prerequisite")
+	private String prerequis;
+	@Column (name = "program")
+	private String programme;
+	@Transient
 	private List<Cours> cours = new ArrayList<>();
+	@Transient
 	private List<Competence> competences = new ArrayList<>();
 	
-	
-	
+		
 	public Matiere() {
 		super();
 	}

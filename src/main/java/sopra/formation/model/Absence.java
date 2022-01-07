@@ -9,7 +9,9 @@ public class Absence {
 	private Formateur formateur;
 	
 	
-	
+	public Absence() {
+		super();
+	}
 	
 	public Long getId() {
 		return id;

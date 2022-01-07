@@ -1,5 +1,7 @@
 package sopra.formation.model;
 
+import java.util.List;
+
 public class Cursus {
 
 	private int id;

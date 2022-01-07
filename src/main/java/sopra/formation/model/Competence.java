@@ -1,18 +1,32 @@
 package sopra.formation.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+@Entity
+@Table (name = "Skill")
 public class Competence {
+	@Id
+	@GeneratedValue
 	private Long id;
+	@Version
 	private int version;
+	@Enumerated
 	private Niveau niveau;
-	
+	@Transient
 	private Matiere matiere;
+	@Transient
 	private Formateur formateur;
 	
 
 	public Competence() {
 		super();
 	}
-	
 	
 	public Long getId() {
 		return id;
