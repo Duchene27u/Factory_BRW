@@ -25,6 +25,8 @@ public class TestJpa {
 		utilisateur3 =  utilisateurDao.save(utilisateur3);
 		
 		
+		
+		
 	}
 
 }
