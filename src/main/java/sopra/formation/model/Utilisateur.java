@@ -15,7 +15,7 @@ import javax.persistence.Version;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "User type")
+@DiscriminatorColumn(name = "User_type")
 public class Utilisateur {
 	@Id
 	@GeneratedValue

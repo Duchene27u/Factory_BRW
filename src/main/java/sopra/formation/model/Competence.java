@@ -1,6 +1,7 @@
 package sopra.formation.model;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -19,7 +20,7 @@ public class Competence {
 	private Long id;
 	@Version
 	private int version;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Niveau niveau;
 	@ManyToOne
 	@JoinColumn (name = "subject_id")
@@ -31,6 +32,11 @@ public class Competence {
 
 	public Competence() {
 		super();
+	}
+	
+	public Competence(Niveau niveau, Formateur formateur) {
+		this.niveau = niveau;
+		this.formateur = formateur;
 	}
 	
 	public Long getId() {

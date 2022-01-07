@@ -41,6 +41,14 @@ public class Matiere {
 		super();
 	}
 	
+	public Matiere(String titre, int duree, String objectif, String prerequis, String programme) {
+		this.titre = titre;
+		this.duree = duree;
+		this.objectif = objectif;
+		this.prerequis = prerequis;
+		this.programme = programme;
+	}
+	
 	public Long getId() {
 		return id;
 	}

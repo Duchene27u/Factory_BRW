@@ -29,6 +29,7 @@ public class Stagiaire extends Utilisateur{
 	public Stagiaire(String nom, String prenom, String identifiant, String motDePasse, LocalDate dateNaissance) {
 		super(nom, prenom, identifiant, motDePasse);
 		this.dateNaissance = dateNaissance;
+		super.setDroit(Droit.STAGIAIRE);
 	}
 
 

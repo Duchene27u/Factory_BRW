@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -28,7 +29,7 @@ public class Filiere {
 	private LocalDate dateDebut;
 	@Column(name="duration")
 	private int duree;
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	private Dispositif dispositif;
 	@ManyToOne
 	@JoinColumn(name="user_id")

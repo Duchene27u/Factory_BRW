@@ -24,7 +24,7 @@ public class Formateur extends Utilisateur{
 	
 	
 	public Formateur() {
-				
+			super.setDroit(Droit.FORMATEUR);
 	}
 	
 	public List<Absence> getAbsences() {
