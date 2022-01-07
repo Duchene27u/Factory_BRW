@@ -1,13 +1,26 @@
 package sopra.formation.model;
 
+import javax.annotation.processing.Generated;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.persistence.Transient;
+import javax.persistence.Version;
 
+@Entity
+@Table(name="Room")
 public class Salle {
 
+	@Id
+	@GeneratedValue
 	private int id;
+	@Version
 	private int version;
 	private String nom;
 	private String url;
+	@Embedded
 	private Adresse adresse;
 	private int capacite;
 

@@ -1,20 +1,40 @@
 package sopra.formation.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+@Entity
+@Table(name="Workshop")
 public class Filiere {
 
+	@Id
+	@GeneratedValue
 	private int id;
+	@Version
 	private int version;
 	private LocalDate dateDebut;
 	private int duree;
+	@Enumerated
 	private Dispositif dispositif;
-	private Gestionnaire gestionnaire;
-	private List<Cours> cours;
+	@Transient
+	private Utilisateur gestionnaire;
+	@Transient
+	private List<Cours> cours=new ArrayList<Cours>();
+	@Transient
 	private Salle salle;
+	@Transient
 	private Formateur formateurRef;
-	private List<Cursus> cursus;
+	@Transient
+	private List<Cursus> cursus = new ArrayList<Cursus>();
 	
 	public Filiere() {
 
@@ -60,11 +80,11 @@ public class Filiere {
 		this.dispositif = dispositif;
 	}
 
-	public Gestionnaire getGestionnaire() {
+	public Utilisateur getGestionnaire() {
 		return gestionnaire;
 	}
 
-	public void setGestionnaire(Gestionnaire gestionnaire) {
+	public void setGestionnaire(Utilisateur gestionnaire) {
 		this.gestionnaire = gestionnaire;
 	}
 

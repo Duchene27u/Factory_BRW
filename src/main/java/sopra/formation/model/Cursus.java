@@ -1,16 +1,36 @@
 package sopra.formation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
+import javax.persistence.Version;
+
+@Entity
+@Table(name="Curriculum")
 public class Cursus {
 
+	@Id
+	@GeneratedValue
 	private int id;
+	@Version
 	private int version;
+	@Column(name="rateB")
 	private int noteC;
+	@Column(name="commentB")
 	private String commentairesC;
+	@Column(name="rateT")
 	private int noteT;
+	@Column(name="commentT")
 	private String commentairesT;
-	private List<Stagiaire> stagiaires;
+	@Transient
+	private List<Stagiaire> stagiaires = new ArrayList<Stagiaire>();
+	@Transient
 	private Filiere filiere;
 	
 	public Cursus() {
