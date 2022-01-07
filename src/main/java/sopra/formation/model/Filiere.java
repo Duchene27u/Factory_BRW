@@ -96,11 +96,11 @@ public class Filiere {
 		this.gestionnaire = gestionnaire;
 	}
 
-	public List<Cours> getListeCours() {
+	public List<Cours> getCours() {
 		return cours;
 	}
 
-	public void setListeCours(List<Cours> listeCours) {
+	public void setCours(List<Cours> listeCours) {
 		this.cours = listeCours;
 	}
 
@@ -120,11 +120,11 @@ public class Filiere {
 		this.formateurRef = formateurRef;
 	}
 
-	public List<Cursus> getListeCursus() {
+	public List<Cursus> getCursus() {
 		return cursus;
 	}
 
-	public void setListeCursus(List<Cursus> listeCursus) {
+	public void setCursus(List<Cursus> listeCursus) {
 		this.cursus = listeCursus;
 	}
 	
