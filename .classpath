@@ -19,6 +19,7 @@
 		</attributes>
 	</classpathentry>
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-16">
 =======
 	<classpathentry excluding="**" kind="src" output="target/test-classes" path="src/test/resources">
@@ -31,6 +32,9 @@
 <<<<<<< Updated upstream
 >>>>>>> Stashed changes
 =======
+>>>>>>> Stashed changes
+=======
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-16">
 >>>>>>> Stashed changes
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
